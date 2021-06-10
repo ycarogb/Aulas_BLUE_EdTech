@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Refazendo o Exercicio da Aula 2 com flexbox
+        </title>
+        <style>
+
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .cont1 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cont2 {
+                display: flex;
+                background-color: blue;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                color: white;
+            }
+            
+            .cont3 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                background-color: blue;
+            }
+
+            .div3 {
+                background-color: yellow;
+            color: black;
+            width: 40% ;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+            text-align: left;
+            border-radius: 10%;
+            margin: 3% ;
+            padding-left: 3%;
+        }
+
+        .div4 {
+            background-color: magenta;
+            color: black;
+            width: 40% ;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+            text-align: left;
+            border-radius: 10%;
+            margin: 3% ;
+            padding-left: 3% ;
+            padding-bottom: 1% ;
+        }
+
+        .table {
+            border-color: black;
+            border-inline-start: black;
+            border-style: solid;
+            border-width: 1px;
+            border-collapse: collapse;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="cont1">
+            <img src = "Logo_BLUE.gif" width="50px">
+            <h2> BLUE EdTech </h2>
+        </div>
+        <div class="cont2">
+            <h2> Módulo 2 - Web, Cloud e DataBase </h2>
+        </div>
+            <div class = "cont3">
+                <div class = "div3">
+                    <h4> Agenda de Hoje </h4>
+                    <ul>
+                        <li> Introdução ao Desenvolvimento Web </li>
+                        <li> Estrutura HTML </li>
+                        <li> Layput de páginas com CSS </li>
+                    </ul>
+                </div>
+                <div class = "div4">
+                    <h4> Presença </h4>
+                    <table class = "table">
+                        <tr>
+                            <td style= "width: 80%;"> Aluno </td>
+                            <td> Presente </td>
+                        </tr>
+                        <tr>
+                            <td style= "width: 80%;"> Felipe Moraes </td>
+                            <td> Sim </td>
+                        </tr>
+                        <tr>
+                            <td style= "width: 80%;"> Gabriela Silva </td>
+                            <td> Não </td>
+                        </tr>
+                    </table>
+                </div>    
+            </div>
+    </body>
+</html>
