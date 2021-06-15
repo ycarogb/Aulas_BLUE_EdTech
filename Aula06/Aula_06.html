@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Página de Exemplo Forms</title>
+        <link rel="stylesheet" type="text/css" href="/Aula06/static/style.css" />
+    </head>
+    <center><body>
+        <form action=" " method="GET">
+            <div class="cont4">
+                <div class = "cont1">
+                    <h1>Formulário de Inscrição</h1>
+                </div>
+        <!-- o id é um identificador único para cada input, e vai ser importante para o funcionamento do programa-->
+                <div class = "cont2">    
+                    <div class = "cont3">
+                        <label for id > Nome: </label> <input type="text" name = "nome" id = "nome" />
+                    </div>
+                    <div class = "cont3">
+                        <label for="h"> Homem </label><input type="radio" name = "turno" id = "manhã" value= "h" /> <!-- para o tipo radio, você digita os mesmos nomes para definis as opções -->
+                        <label for="m"> Mulher </label><input type="radio" name = "turno" id = "tarde"  value= "m" />
+                    </div>
+                    <div class = "cont3">
+                        <label for id > Nascimento: </label> <input type= "date" name = "nascimento" id = "nascimento" value= "nasc" />
+                    </div>
+                    <div class = "cont3">
+                        <label for="sms"> Desejo receber SMS </label><input type="checkbox" name = "sms" id = "sms" value= "sms" />
+                        <label for="email"> Desejo receber email </label><input type="checkbox" name = "email" id = "email" value= "email" />
+                    </div>
+                    <div class = "cont3">
+                        <label for="senha"> Senha </label><input type="password" name = "senha" id = "senha" value= "senha" />
+                    </div>
+                    <div class = "cont3">
+                        <label for="cid"> Cidade </label><select id="cidade" name = "senha"  value= "cid">
+                            <option></option>
+                            <optgroup label="Norte">
+                                <option>Manaus</option>
+                                <option>Belém</option>
+                            </optgroup>
+                            <optgroup label ="Nordeste">
+                                <option>Salvador</option>
+                                <option>Fortaleza</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class = "cont3">
+                        <input type="submit" value="Enviar formulário" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body></center>
+
+</html>
