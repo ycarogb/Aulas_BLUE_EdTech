@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Inclusão de Javascript para aumentar animações da página-->
+    <!--A função getElementById aciona determinado elemento chamado pelo Id para realizar alguma ção-->
+    <script type="text/javascript">
+        function altera(){
+            const elemento1 = document.getElementById('botao');  
+            const elementos2 = document.getElementsByClassName('classe1');
+            if (elemento1.innerText == "Texto mudou"){
+                for (const elemento of elementos2){
+                    elemento.innerHTML = 'mudando <b>innerHTML</b>'
+                }
+                elementos2[1].innerHTML = '<h1>Este é diferente</h1>'
+                elemento1.innerText = "Texto voltou";
+                elemento1.style.background = "#0000000";
+                elemento1.style.bgColor = "#ffffff";
+                document.bgColor = "f2f1d0";
+            } 
+            else {
+                for (const elemento of elementos2){
+                    elemento.innerHTML = 'mudando <b>innerHTML</b>'
+                }
+                elementos2[1].innerHTML = '<h1>Este ainda é diferente</h1>'
+                elemento1.innerText = "Texto mudou";
+                elemento1.style.background = "#0000000";
+                elemento1.style.bgColor = "#ffffff";
+                document.bgColor = "f2f1d0";
+            }
+        }
+    </script>
+</head>
+<body onclick="altera()">
+    <button id="botao">Valor normal</button>
+
+    <div style="padding: 10px" class="classe1">DIV 1 com classe: classe1</div>
+    <div style="padding: 10px" class="classe1">DIV 2 com classe: classe1</div>
+    <div style="padding: 10px" class="classe1">DIV 3 com classe: classe1</div>
+</body>
+</html>

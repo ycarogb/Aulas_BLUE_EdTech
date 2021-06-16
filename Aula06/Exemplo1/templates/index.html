@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> Jogo Blue </title>
+        <style>
+            body{
+                background-color: #eee;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "div-principal">
+
+            {% if not criatura %}
+
+            <div class = "div-logo">
+                <img src="/Aula06/Exemplo1/static/Logo_BLUE.gif" width= "200" />
+            </div>
+            <form method="POST">
+                <div class = "div-form">
+                    <label for = "nome"> Nome: </label><input type = "text" name = "nome" id = "nome" placeholder = "Digite seu nome..." />
+                </div>
+                <div class = "div-form">
+                    <label for = "sobrenome"> Digite seu sobrenome: </label><input type = "text" name = "sobrenome" id = "sobrenome" placeholder = "Digite seu sobrenome..." />
+                </div>
+                <div class = "div-form">
+                    <label for = "elfo"> Elfo </label><input type = "radio" name = "criatura" id = "elfo" checked />
+                    <label for = "orc"> Orc </label><input type = "radio" name = "criatura" id = "orc"/>
+                    <label for = "Hobbit"> Hobbit </label><input type= "radio" name = "criatura" id = "Hobbit" />
+                </div>
+                <div>
+                    <input type="submit" value="Enviar formulário" />
+                </div>
+            </form>
+            {% else %}
+
+            <div class = "div-form">
+                <p> {{ nome }} {{ sobrenome }}, você é um {{ criatura }}!</p>
+                <img src="{{imagem}}" width="200" />
+            </div>
+
+            <div class="div-form">
+                <a href="/" class="jogar_nov">Jogar novamente!</a>
+            </div>
+            
+            {% endif %}
+            
+        </div>
+        
+    </body>
+</html>
