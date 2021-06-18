@@ -14,12 +14,14 @@ def index():
         sobrenome = request.form['sobrenome']    
         criatura = request.form ['criatura']
     
-    if criatura == "elfo":
-        imagem = "https://i.pinimg.com/originals/80/de/b7/80deb7020d47ef025e88997a815b5558.jpg" #imagem de elfo
-    elif criatura == "orc":
-        imagem = "https://w7.pngwing.com/pngs/513/1010/png-transparent-azog-orc-goblin-drawing-orc-superhero-fictional-character-religion.png" #imagem orc
-    elif criatura == "hobbit":
-        imagem = "https://w7.pngwing.com/pngs/558/939/png-transparent-brave-frontier-bilbo-baggins-the-hobbit-fan-art-bilbo-baggins-vertebrate-fictional-character-cartoon.png" #imagem hobbit 
+        if criatura == "elfo":
+            imagem = "https://i.pinimg.com/originals/52/b8/c3/52b8c320e93e722020f51d6e4920d6bc.gif" #imagem de elfo
+        elif criatura == "orc":
+            imagem = "https://thumbs.gfycat.com/ExemplarySeriousBeardedcollie-max-1mb.gif" #imagem orc
+        elif criatura == "hobbit":
+            imagem = "https://media.tenor.com/images/a758b5c5a136dde219fc5926b42c7b1b/tenor.gif" #imagem hobbit 
+        else:
+            imagem = None
 
 
     return render_template ("index.html" , nome=nome , sobrenome=sobrenome , criatura=criatura , imagem=imagem)

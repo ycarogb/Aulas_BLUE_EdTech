@@ -17,7 +17,7 @@
             {% if not criatura %}
 
             <div class = "div-logo">
-                <img src="/Aula06/Exemplo1/static/Logo_BLUE.gif" width= "200" />
+                <img src="/static/Logo_BLUE.gif" width= "200" />
             </div>
             <form method="POST">
                 <div class = "div-form">
@@ -29,7 +29,7 @@
                 <div class = "div-form">
                     <label for = "elfo"> Elfo </label><input type = "radio" name = "criatura" id = "elfo" checked />
                     <label for = "orc"> Orc </label><input type = "radio" name = "criatura" id = "orc"/>
-                    <label for = "Hobbit"> Hobbit </label><input type= "radio" name = "criatura" id = "Hobbit" />
+                    <label for = "hobbit"> Hobbit </label><input type= "radio" name = "criatura" id = "hobbit" />
                 </div>
                 <div>
                     <input type="submit" value="Enviar formulário" />
@@ -37,11 +37,12 @@
             </form>
             {% else %}
 
-            <div class = "div-form">
-                <p> {{ nome }} {{ sobrenome }}, você é um {{ criatura }}!</p>
-                <img src="{{imagem}}" width="200" />
+            <div class = "div-escolha">
+                {{ nome }} {{ sobrenome }}, você é um <b>{{ criatura }}</b>
             </div>
-
+            <div>
+                <img src="{{imagem}}" width="100%" class="div_escolha-imagem" />
+            </div>
             <div class="div-form">
                 <a href="/" class="jogar_nov">Jogar novamente!</a>
             </div>
