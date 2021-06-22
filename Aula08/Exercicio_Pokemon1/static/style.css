@@ -3,6 +3,9 @@
 body{
     font-family: 'Jost', serif;
     background-color: #e1e1d0;
+    font-size: 18px;
+    padding: 20px;
+    margin: 0;
 }
 
 .bloco {
@@ -13,11 +16,19 @@ body{
     margin: 1%;
 }
 
+.bloco1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #e1e1d0;
+    justify-content: center;
+    margin: 1%;
+}
 .lista_pokemons{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
+    align-content: space-around;
 }
 
 .card_pokemon{
@@ -29,6 +40,11 @@ body{
     border-top: blue solid;
     border-bottom: blue solid;
     border-radius: 15%;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    width: 33%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
 }
 .card_pokemon:hover {
     background-color: #b9b992;
@@ -38,4 +54,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.selecionado{
+    background-color: #99bbff;
 }
