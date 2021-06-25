@@ -5,7 +5,7 @@ const pessoa = {
     sobrenome: "Einstein" ,
     idade: 42 ,
 
-    doido: false ,
+    doido: true ,
     imagem_doido: 'https://www.hypeness.com.br/1/2017/08/EinsteinL3.jpg',
     imagem_serio: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Albert_Einstein_%28Nobel%29.png',
 
