@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href="/static/style.css" />
+    <title>Projeto CRUD com HTML, CSS, JS, Python (Flask) e SQL</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class = "bloco">
+        <h2>Visualizar todos os registros</h2>
+    </div>
+    <div class = "bloco">
+        <table class = "tabela">
+            <tr class = "tabela_header">
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Imagem</td>
+                <td>Ações</td>
+            </tr>
+
+            {% for registro in registros %}
+
+            <tr>
+                <td>{{{ registro["id"] }}</td>
+                <td>{{ registro["nome"] }}</td>
+                <td><img src = "{{registro['imagem_url]}}" alt = "{{ registro['nome'] }}" width="100" height="200" /></td>
+                <td><a  href = "/read/{{registro['id']}}" class = botao >Visualizar</a></td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+</html>

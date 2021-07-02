@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exemplo Pokemon</title>
+        <link rel="stylesheet" type="text/css" href ="/static/style.css" /> <!--chamando o estilo da página HTML-->
+        <script type="text/javascript" src="./static/script.js"></script> <!--chamando o script da página-->        
+    </head>
+    <body onload="iniciar()">
+        <div class = "bloco"> <!-- Div com a logo BLUE-->
+            <img src="/static/Logo_BLUE.gif" width="100px"/>  
+        </div>
+        <div class = "bloco"> <!-- Div com o número de pokemons selecionados-->
+            <h3 id = "texto">Selecione um pokémon</h3>
+        </div>
+        <div class = "lista_pokemons"> <!--Div com os pokemons-->
+            {%for pokemon in pokemons%}
+                <div class="card_pokemon" data-nome="{{pokemon.nome}}">
+                    <div class="imagem_pokemon">
+                        <img src="{{caminho_base}}/{{pokemon.numero}}.png" width="60%" alt = "Imagem do Pokemon" />
+                    </div>
+                    <div class = "nome_pokemon">
+                        <b>{{pokemon.nome}}</b>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+projeto 2
+1 - criar banco de dados 
+	- criar tabela de filme
+	- popular tabela		.... OK!
+
+2- enviar banco de dados para flask
+	-baixar pip install flask_sqlalchemy ..... OK!
+	- baixar pip install psycopg2  ..... OK!
+
+3 - copiar e colar projeto 1
+	- agora será projeto 2 .... OK
+
+4 - no arquivo app.py
+	- importar flask sqlalchemy ... OK
+
+5 - apagar dicionário de registros
+
+#Configurações de acesso ao banco de dados
+#incluir dados do Elephant ou de qualqer outra plataforma, inclusivo da rede local
+
+user = 
+password = 
+host = 
+database =
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = "uma chave secreta bem secreta"
+
+
+db = SQLAlchemy(app) #objeto da classe SQLAlchemy
+
+#Modelar a Classe Filmes - > tabela filmes
+#db.Model -> Avisa ao flask que é um modelo de tabelas
+
+class Filmes(db.Model):
+	id = db.Column(db.Intereger , primarykey=True)
+	nome = db.Column(db.String(255), nullable=False) #nullable = NOT NULL
+	imagem_url = db.Column(db.String(255), nullable=False)
+
+#método construtor
+	def __init__(self, nome, imagem_url):
+		self.nome = nome
+		self.imagem_url = imagem_url
+
+#Esta função faz é o mesmo deste comando no SQL - SELECT * FROM filmes ORDER BY id ASC
+#query = SELECT
+	@staticmethod
+	def read_all():
+		return Filmes.query.order_by(Filmes.id.asc().all())
+	
+	@staticmethod
+	def read_id(registro_id):
+		registro = Filmes.read_id(id_registro)
+		return Filmes.read_id(id_registro)
+		print (registro)
+		
+		
+
+[...]
+
+@app.route("/read"):
+	#Chamada do método read_all da Classe Filmes, que representa a tabela filmes do BD
+	registros = Filmes.read_all()
+		

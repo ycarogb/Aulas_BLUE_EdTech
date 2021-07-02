@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css" />
+    <title>Produtos - PC Store</title>
+</head>
+<body>
+    <div class="bloco">
+        <img src="./static/logo_loja.jpg" alt="Logo da Blue" width="200">
+    </div>
+    
+    {% if not selecionado %}
+
+    <div class="bloco">
+        <h1>Selecione um produto</h1>
+    </div>
+    <div class="lista_produtos">
+        {% for produto in produtos %}
+
+            {% if produto.disponivel %}
+
+                <div class="card_produto" data-nome="{{ produto.nome }}" data-numero = "{{ produto.numero }}">
+                    <div class="imagem_produto">
+                        <img src="{{ produto.imagem }}" width="200px" alt="Imagem do notebook">
+                    </div>
+
+                    <div class="nome_produto">
+                        <b>{{ produto.nome }}</b>
+                    </div>
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+    </div>
+    <div class="bloco">
+        <form method="POST">
+            <input type="text" name="nr_produto" id="nr_produto" style="display: none" />
+            <input type="submit" id="botao_escolher" class="botao" value="Escolher!" />
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco" style="display: none;">
+        <h1 id="produto_selecionado">Nenhum produto foi selecionado.</h1>
+    </div>
+
+    <div class="bloco">
+        <h1 id="produto_selecionado">Você selecionou o {{ produtos[num_produto_int-1]['nome'] }}.</h1>
+    </div>
+    <div class="card_produto_2">
+        <div class="imagem_produto">
+            <img src="{{ produtos[num_produto_int-1]['imagem'] }}" width="400px" alt="Imagem do Produto">
+        </div>
+
+        <div class="nome_produto_2">
+            <b>Marca: </b> <i>{{ produtos[num_produto_int-1]['marca'] }}</i>
+        </div>
+        <div class="nome_produto_2">
+            <b>Processador: </b> {{ produtos[num_produto_int-1]['processador'] }}
+        </div>
+        <div class="nome_produto_2">
+            <b>HD: </b> {{ produtos[num_produto_int-1]['hd'] }}
+        </div>
+        <div class="nome_produto_2">
+            <b>RAM: </b> {{ produtos[num_produto_int-1]['ram'] }}
+        </div>
+        <div class="nome_produto_2">
+            <b>Preço: </b> {{ produtos[num_produto_int-1]['preço'] }}
+        </div>
+    </div>
+    <div class="bloco">
+        <button onclick="history.go(-1);" class="botao">Voltar</button>
+    </div>
+
+
+{% endif %}
+<script type="text/javascript" src="./static/script.js"></script>
+</body>
+</html>
